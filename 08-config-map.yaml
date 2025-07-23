@@ -1,0 +1,11 @@
+apiVersion: v1 
+kind: ConfigMap 
+metadata: 
+    name: pod-config 
+    labels:
+       purpose: config 
+       env: dev 
+data: 
+  COURSE: "DevOps with Aws" 
+  DURATION: "120HRS" 
+  TRAINER: "SIVAKUMAR REDDY M"       
