@@ -3,12 +3,12 @@ kind: Pod
 metadata: 
     name: multi-container 
     labels: 
-       project: roboshop
+       project: roboshop 
        purpose: container-demo 
 spec: 
-  containers:
-  - name: nginx 
-    image: nginx 
-  - name: almalinux 
-    image: almalinux:9         
-    command: ["sleep","1000"]
+   containers: 
+   - name: nginx 
+     image: nginx 
+   - name: almalinux 
+     image: almalinux:9 
+     command: ["sleep","1000"]         

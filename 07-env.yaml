@@ -3,13 +3,13 @@ kind: Pod
 metadata: 
      name: envars-demo 
      labels: 
-        name: demonstrate-envars 
+        name: demonstrate-demo 
 spec: 
-   containers:
+   containers: 
    - name: nginx 
      image: nginx 
-     env:
+     env: 
      - name: COURSE 
-       value: "KUBERNETES" 
+       value: "KUBERNETES"
      - name: TRAINER 
-       value: "SIVAKUMAR REDDY M"            
+       value: "SIVAKUMR REDDY M"              
