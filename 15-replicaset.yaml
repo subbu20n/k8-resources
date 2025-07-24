@@ -11,7 +11,7 @@ spec:
    replicas: 2 
    # this are the labels replica set used to create pod replicas , this would match pod labels 
    selector: 
-      matchelabels: 
+      matchlabels: 
          purpose: rs-demo 
          project: roboshop 
          app: nginx 
