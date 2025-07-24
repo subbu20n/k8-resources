@@ -11,7 +11,7 @@ spec:
    replicas: 2 
    # this are the labels replica set used to create po replicas, this should match pod labels 
    selector: 
-      matchLbels: 
+      matchLabels: 
         purpose: deployment-demo 
         project: roboshop 
         app: nginx 
