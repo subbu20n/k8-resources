@@ -22,7 +22,7 @@ spec:
            purpose: deployment-demo 
            project: roboshop 
            app: nginx 
-   spec: 
-     containers: 
-     - name: nginx 
-       image: nginx-stage-perl                         
+      spec: 
+        containers: 
+        - name: nginx 
+          image: nginx-stage-perl                         
