@@ -3,7 +3,7 @@ kind: StorageClass
 metadata: 
       name: efs-roboshop 
 provisioner: efs.csi.aws.com 
-reClaimPolicy: Retain 
+reclaimPolicy: Retain 
 parameters: 
       provisioningMode: efs-ap 
       filesystemId: fs-0e394bc25d5a0e31e
