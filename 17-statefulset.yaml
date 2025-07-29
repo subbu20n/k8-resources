@@ -10,13 +10,13 @@ spec:
    - protocol: TCP 
      port: 80 
      name: web 
-     clusterIp: None 
+     clusterIP: None 
    selector: 
        purpose: statefulset 
        project: roboshop 
 --- 
 
-apiVersion: v1 
+apiVersion: apps/v1 
 kind: Service 
 metadata: 
       name: nginx-svc-normal 
@@ -42,8 +42,9 @@ metadata:
          project: roboshop 
 spec: 
    selector: 
-      purpose: statefulset 
-      project: roboshop 
+      matchLabels:
+        purpose: statefulset 
+        project: roboshop 
    replicas: 3 
    serviceName: "nginx-svc-headless" 
    template: 
@@ -63,7 +64,7 @@ volumeClaimTemplates:
 - metadata: 
       name: www 
 spec: 
-    accessModes: ["ReadWriteOnce"] 
+    accessModes: [ "ReadWriteOnce" ] 
     storageClassName: "efs-roboshop" 
     resources: 
         requests: 
