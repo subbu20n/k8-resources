@@ -60,10 +60,10 @@ spec:
            - name: www 
              mountPath: /usr/share/nginx/html
 # this is nothing but pvc you can direclt create here 
-volumeClaimTemplates: 
-- metadata: 
+   volumeClaimTemplates: 
+   - metadata: 
       name: www 
-spec: 
+   spec: 
     accessModes: [ "ReadWriteOnce" ] 
     storageClassName: "efs-roboshop" 
     resources: 
