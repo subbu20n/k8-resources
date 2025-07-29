@@ -10,7 +10,7 @@ spec:
    - protocol: TCP 
      port: 80 
      name: web 
-     clusterIP: None 
+   clusterIP: None 
    selector: 
        purpose: statefulset 
        project: roboshop 
