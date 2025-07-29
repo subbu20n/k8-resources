@@ -16,7 +16,7 @@ spec:
        project: roboshop 
 --- 
 
-apiVersion: apps/v1 
+apiVersion: v1 
 kind: Service 
 metadata: 
       name: nginx-svc-normal 
@@ -33,7 +33,7 @@ spec:
        project: roboshop 
 --- 
 
-apiVersion: v1 
+apiVersion: apps/v1 
 kind: StatefulSet 
 metadata: 
       name: nginx-statefulset 
