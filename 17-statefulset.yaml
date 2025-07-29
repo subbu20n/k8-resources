@@ -63,10 +63,10 @@ spec:
    volumeClaimTemplates: 
    - metadata: 
       name: www 
-   spec: 
-    accessModes: [ "ReadWriteOnce" ] 
-    storageClassName: "efs-roboshop" 
-    resources: 
-        requests: 
-           storage: 2Gi        
+     spec: 
+       accessModes: [ "ReadWriteOnce" ] 
+       storageClassName: "efs-roboshop" 
+       resources: 
+         requests: 
+            storage: 2Gi        
 
