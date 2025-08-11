@@ -10,9 +10,10 @@ spec:
           component: mongodb 
    policyType:
    - Ingress: 
-     - from:  
-       - podSelector: 
-             matchLabels: 
+   ingrss:
+   - from:  
+      - podSelector: 
+           matchLabels: 
                  component: catalogue 
                  project: roboshop 
                  tier: app 
