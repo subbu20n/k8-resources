@@ -17,6 +17,6 @@ spec:
                  component: catalogue 
                  project: roboshop 
                  tier: app 
-   ports: 
-   - protocol: TCP 
-     port: 27017 
+     ports: 
+     - protocol: TCP 
+       port: 27017 
