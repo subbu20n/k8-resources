@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: DaemonSet 
 metadata: 
      name: fluentd-elasticsearch 
-     namespace: roboshop 
+     namespace: kube-system 
      labels: 
         name: fluentd-logging 
 spec: 
