@@ -23,7 +23,7 @@ spec:
            - key: node-rule.kubernetes.io/master 
              operator: Exists 
              effect: NoSchedule  
-           conatiners: 
+           containers: 
            - name: fluentd-elasticsearch 
           # this pod is collect host logs and send them to ELK cluster 
              image: quay.io/fluentd_elasticsearch/fluentd:v5.0.1 
@@ -45,6 +45,6 @@ spec:
            - name: varlog 
              hostPath: 
                  path: /var/log 
-                                                                   
+
 
          
