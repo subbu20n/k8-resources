@@ -34,6 +34,7 @@ metadata:
      labels: 
         purpose: service-demo 
 spec: 
+   type: LoadBalancer
    selector: 
       purpose: deployment-demo 
       project: roboshop 
