@@ -10,7 +10,7 @@ spec:
           component: mongodb 
    policyType:
    - Ingress: 
-   ingrss:
+   ingress:
    - from:  
       - podSelector: 
            matchLabels: 
