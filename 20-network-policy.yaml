@@ -9,7 +9,7 @@ spec:
           tier: database 
           component: mongodb 
    policyTypes:
-   - Ingress: 
+    - Ingress: 
    ingress:
    - from:  
       - podSelector: 
