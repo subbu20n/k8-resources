@@ -8,7 +8,7 @@ spec:
       matchLabels: 
           tier: database 
           component: mongodb 
-   policyType:
+   policyTypes:
    - Ingress: 
    ingress:
    - from:  
