@@ -1,13 +1,13 @@
 apiVersion: v1 
 kind: Pod 
 metadata: 
-     name: labels 
-     labels:
-        project: roboshop 
-        component: mysql 
-        tier: backend 
-        environment: dev 
+  name: labels 
+  labels: 
+    project: roboshop 
+    component: mysql 
+    tier: backend 
+    environment: dev  
 spec: 
-   containers: 
-   - name: nginx 
-     image: nginx         
+  containers: 
+  - name: nginx 
+    image: nginx     
