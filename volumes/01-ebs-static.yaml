@@ -1,67 +1,64 @@
 apiVersion: v1 
-kind: PersisitentVolume 
+kind: persistentVolume 
 metadata: 
-       name: ebs-static 
-spec:  
-    accessMOdes: 
-    - ReadWriteOnce 
-    capacity:
-       storage: 20Gi 
-    csi: 
-      driver: ebs.csi.aws.com 
-      fsType: ext4 
-      volumeHandle:                             
---- 
-
-apiVersion:  v1 
-kind: PersistantVolumeClaim 
-metadata: 
-      name: ebs-static 
+   name: ebs-static 
 spec: 
-   StrorageClassName: # empty string must be explicty set otherwise default storageclass will be set 
-   volumeName: ebs-static 
    accessModes: 
    - ReadWriteOnce 
+   capacity: 
+     storage: 20Gi 
+   csi: 
+     driver: ebs.csi.aws.com 
+     fsType: ext4 
+     volumeHandle: 
+--- 
+apiVersion: v1 
+kind: PersistentVolumeClaim 
+metadata: 
+    name: ebs-static 
+spec: 
+   storageClassName: "" 
+   volumeName: ebs-static 
+   accessModes: 
+   - ReadWriteOnce
    resources:
       requests: 
         storage: 15Gi 
 --- 
-
 apiVersion: v1 
 kind: Pod 
 metadata: 
-      name: nginx 
-      labels: 
-         purpose: ebs-static-demo 
-         project: roboshop 
+    name: nginx 
+    labels: 
+       purpose: ebs-static-demo 
+       project: roboshop 
 spec: 
-   nodeSelector: 
-     topology.kubernetes.io/zone:us-east-1b 
-   containers: 
-   - name: nginx 
-     image: nginx 
-     volumeMounts: 
-     - name: persistant-storage 
-       mountpath: /usr/share/nginx/html 
-   volumes: 
-   - name: persistant-storage 
-     persistantVolumeClaim: 
-        name: ebs-static 
+  nodeSelector: 
+    topology.kubernetes.io/zone: us-east-1c 
+  containers: 
+  - name: nginx 
+    image: nginx  
+    volumeMounts: 
+    - name: persistent-storage 
+      mountPath: /usr/share/nginx/html 
+  volumes: 
+  - name: persistent-stoarge 
+    persistentVolumeClaim: 
+       claimName: ebs-storage 
 --- 
-
 apiVersion: v1 
-kind: Srvice 
+kind: Service  
 metadata: 
-      name: ebs-static 
-      labels: 
-         purpose: ebs-static-demo 
-         project: roboshop 
+    name: ebs-static 
+    labels: 
+       purpose: ebs-static-demo 
+       project: roboshop 
 spec: 
-   type: LoadBalancer 
-   selector: 
-      purpose: ebs-static-demo 
+  type: LoadBalancer 
+  selector: 
+      purpose: ebs-static-demo                                               
       project: roboshop 
-   ports: 
-   - protocol:  TCP 
-     port: 80 # service port
-     targetPort: 80 # containerPort 
+  ports: 
+  - protocol: TCP 
+    port: 80 # service port  
+    targetPort: 80 # container port     
