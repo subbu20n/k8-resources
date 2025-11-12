@@ -64,4 +64,4 @@ spec:
        storageClassName: "efs-roboshop" 
        resources: 
           requests: 
-             storage: 2Gi             
+             storage: 2Gi              
