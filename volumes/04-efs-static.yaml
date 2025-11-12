@@ -8,7 +8,7 @@ spec:
    capacity: 
      storage: 5Gi 
    volumeMode: filesystem
-   PersistentVolumeReclaimPolicy: Retain
+   persistentVolumeReclaimPolicy: Retain
    storageClassName: "" # this should be empty in static provisioning 
    csi: 
      driver: efs.csi.aws.com
