@@ -10,7 +10,7 @@ spec:
    - protocol: TCP 
      port: 80 
      name: web 
-   clusterIp: none 
+   clusterIP: None 
    selector: 
       purpose: nginx-svc-headless 
       project: roboshop 
@@ -20,7 +20,7 @@ kind: Service
 metadata: 
    name: nginx-svc-normal 
    labels: 
-      purpose: ststefulset 
+      purpose: statefulset 
       project: roboshop 
 spec: 
    ports: 
@@ -55,7 +55,7 @@ spec:
           - name: www 
             mountPath: /usr/share/nginx/html 
 # This is nothing but pvc you can create directly here or else you can create seperately 
-volumeClaimTemplate: 
+volumeClaimTemplates: 
 - metadata: 
      name: www 
 spec:  
