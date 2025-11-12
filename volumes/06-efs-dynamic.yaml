@@ -18,8 +18,6 @@ metadata:
         purpose: efs-dynamic-demo 
         project: roboshop 
 spec: 
-   nodeSelector: 
-      topology.kubernetes.io/zone: us-east-1d 
    containers: 
    - name: nginx 
      image: nginx
