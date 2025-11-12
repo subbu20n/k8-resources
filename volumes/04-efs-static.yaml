@@ -7,7 +7,7 @@ spec:
    - ReadWriteOnce 
    capacity: 
      storage: 5Gi 
-   volumeMode: filesystem
+   volumeMode: Filesystem
    persistentVolumeReclaimPolicy: Retain
    storageClassName: "" # this should be empty in static provisioning 
    csi: 
