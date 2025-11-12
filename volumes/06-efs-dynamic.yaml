@@ -22,7 +22,7 @@ spec:
       topology.kubernetes.io/zone: us-east-1d 
    containers: 
    - name: nginx 
-     image: nginx  
+     image: nginx:latest  
      volumeMounts: 
      - name: persistent-storage 
        mountPath: /usr/share/nginx/html 
