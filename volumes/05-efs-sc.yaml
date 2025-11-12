@@ -7,5 +7,5 @@ reClaimPoilicy: Retain
 parameters: 
      provisioningMode: efs-ap 
      FileSystemId: fs-02ed08f5f019fac6f
-     directoryPerms: 700 
+     directoryPerms: "700"
      basePath: "/roboshop" #/roboshop/cart/
