@@ -8,8 +8,8 @@ spec:
    capacity: 
      storage: 5Gi 
    volumeMode: filesystem
-   PersistentVolumeReClaimPolicy: Retain
-   StorageClassName: "" # this should be empty in static provisioning 
+   PersistentVolumeReclaimPolicy: Retain
+   storageClassName: "" # this should be empty in static provisioning 
    csi: 
      driver: efs.csi.aws.com
      volumeHandle: fs-0eee140d65ef8e7f4
@@ -19,7 +19,7 @@ kind: PersistentVolumeClaim
 metadata:
      name: efs-static 
 spec: 
-   storageCLassName: "" 
+   storageClassName: "" 
    volumeName: efs-static 
    accessModes: 
    - ReadWriteOnce 
