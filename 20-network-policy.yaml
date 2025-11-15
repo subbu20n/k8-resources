@@ -3,20 +3,22 @@ kind: NetworkPolicy
 metadata: 
      name: mongodb-accept-catalogue 
      namespace: roboshop 
+     labels:  
+         component: mongodb 
+         tier: database 
 spec: 
    podSelector: 
-      matchLabels: 
-          tier: database 
-          component: mongodb 
-   policyTypes:
-     - Ingress 
-   ingress:
-   - from:  
+       matchLabels: 
+           component: mongodb 
+           tier: database 
+   policyTypes: 
+   - Ingress 
+   ingress: 
+    - from: 
       - podSelector: 
            matchLabels: 
-                 component: catalogue 
-                 project: roboshop 
-                 tier: app 
-     ports: 
-     - protocol: TCP 
-       port: 27017 
+              component: mongodb 
+              tier: database 
+      ports: 
+      - protocol: TCP 
+        port: 27017                          

@@ -6,7 +6,7 @@ metadata:
        test: liveness 
 spec: 
    containers: 
-   - name: nginx 
+   - name: liveness 
      image: nginx 
      livenessProbe: 
        tcpSocket: 
