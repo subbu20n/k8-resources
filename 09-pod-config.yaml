@@ -9,3 +9,15 @@ spec:
      envFrom: 
      - configMapRef: 
          name: pod-config    
+
+apiVersion: v1 
+kind: Pod  
+metadata: 
+    name: env-configmap 
+spec: 
+  containers: 
+  - name: nginx  
+    image: nginx  
+    envFrom: 
+    - configMapRef: 
+        name: pod-confgimap      
