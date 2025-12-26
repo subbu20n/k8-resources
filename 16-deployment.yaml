@@ -22,7 +22,7 @@ spec:
              project: roboshop 
              app: nginx 
       spec: 
-        containers: 
+        containers:  
         - name: nginx 
           image: nginx:latest 
 --- 

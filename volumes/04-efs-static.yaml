@@ -12,7 +12,7 @@ spec:
    storageClassName: "" # this should be empty in static provisioning 
    csi: 
      driver: efs.csi.aws.com
-     volumeHandle: fs-0eee140d65ef8e7f4
+     volumeHandle: fs-0eee140d65ef8e7f4 
 --- 
 apiVersion: v1 
 kind: PersistentVolumeClaim 
@@ -62,3 +62,4 @@ spec:
    - protocol: TCP 
      port: 80 #service port 
      targetPort: 80 #container port          
+             
