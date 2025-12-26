@@ -62,3 +62,71 @@ spec:
       resources:
         requests:
           storage: 2Gi
+
+
+apiVersion: v1 
+kind: Statefulset 
+metadata: 
+    name: nginx-svc-headless 
+    labels: 
+       project: roboshop 
+       purpose: headless 
+spec: 
+   selector: 
+      project: roboshop 
+      purpose: headless 
+   ports: 
+     protoco: TCP 
+     name: web 
+     port: 80 
+     clusterIp: None  
+apiVersion: v1 
+kind: Service  
+metadata: 
+    name: nginx-headless-svc 
+    labels: 
+       project: roboshop 
+       purpose: headless 
+spec: 
+  selector: 
+     project: roboshop 
+     purpose: headless  
+  ports: 
+    protocol: TCP
+    name: web  
+    port: 80
+
+apiVersion: apps/v1 
+kind: Statefulset 
+metadata: 
+     name: nginx-statefulset  
+     labels: 
+        project: roboshop 
+        purpose: headless  
+spec: 
+   selcetor: 
+      matchLabels: 
+          project: roboshop 
+          purpose: headess        
+   serviceName: nginx-headless-service 
+   replicas: 3  
+   template: 
+      metadata: 
+         labels:  
+            project: roboshop 
+            purpose: headless 
+      spec:   
+        containers: 
+            name: nginx 
+            image: nginx  
+            volumeMounts: 
+             - name: www 
+               mountPath: /usr/share/nginx/html 
+        volumes: 
+        - name: www 
+          storageClassName: 'efs-roboshop' 
+          accessModes: 
+          - ReadWriteOnce 
+          resources: 
+            requests: 
+               storage: 5Gi                      
