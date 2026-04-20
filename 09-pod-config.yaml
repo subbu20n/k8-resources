@@ -8,4 +8,5 @@ spec:
      image: nginx 
      envFrom: 
      - configMapRef: 
-         name: pod-config     
+         name: pod-config      
+         
