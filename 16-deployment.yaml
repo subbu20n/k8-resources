@@ -41,3 +41,29 @@ spec:
    - protocol: TCP
      port: 80 #service port 
      targetPort: 80 #containerport                                             
+
+apiVersion: apps/v1 
+kind: Deployment
+metadata: 
+   name: nginx
+   labels: 
+     purpose: nginx-deploy 
+     project: roboshop 
+     app: nginx  
+spec: 
+  replicas: 2
+  slector: 
+     matchLabels: 
+        purpose: nginx-depoy 
+        project: roboshop 
+        app: nginx  
+  template: 
+     metadata: 
+        labels: 
+           purpose: nginx-deploy 
+           project: roboshop 
+           app: nginx  
+     spec: 
+       containers: 
+       - name: nginx 
+         image: nginx  

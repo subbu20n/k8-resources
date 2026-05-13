@@ -17,8 +17,8 @@ spec:
     - from: 
       - podSelector: 
            matchLabels: 
-              component: mongodb 
-              tier: database 
+              component: catalogue 
+              tier: app
       ports: 
       - protocol: TCP 
         port: 27017                            
